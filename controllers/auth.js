@@ -5,7 +5,8 @@ let fire_base = firebase.auth();
 
 //register user
 module.exports.register = (req, res) => {
-    let full_name = req.body.full_name,
+    let firstname = req.body.firstname,
+        lastname= req.body.lastname,
         email = req.body.email,
         password = req.body.password;
 
