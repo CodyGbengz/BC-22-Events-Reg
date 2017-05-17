@@ -1,0 +1,19 @@
+{
+  "name": "bc-22-events-reg",
+  "version": "1.0.0",
+  "description": "An events register app",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WillyWunderdog/BC-22-Events-Reg.git"
+  },
+  "author": "Gbenga Ode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WillyWunderdog/BC-22-Events-Reg/issues"
+  },
+  "homepage": "https://github.com/WillyWunderdog/BC-22-Events-Reg#readme"
+}
