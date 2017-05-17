@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(require('../routes/events.js'));
+app.use(require('./routes/events.js'));
 
 app.listen(port, () => {
 	console.log("Now listening on  " + port)}
