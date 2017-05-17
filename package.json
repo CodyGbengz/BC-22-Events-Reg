@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/WillyWunderdog/BC-22-Events-Reg/issues"
   },
-  "homepage": "https://github.com/WillyWunderdog/BC-22-Events-Reg#readme"
+  "homepage": "https://github.com/WillyWunderdog/BC-22-Events-Reg#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "firebase": "^3.9.0",
+    "handlebars": "^4.0.8",
+    "nodemon": "^1.11.0"
+  }
 }
