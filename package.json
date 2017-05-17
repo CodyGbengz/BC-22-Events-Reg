@@ -19,7 +19,10 @@
   "dependencies": {
     "express": "^4.15.2",
     "firebase": "^3.9.0",
+<<<<<<< HEAD
     "handlebars": "^4.0.8",
+=======
+>>>>>>> master
     "nodemon": "^1.11.0"
   }
 }
