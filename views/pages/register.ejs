@@ -1,22 +1,17 @@
-<% include ../partial/head %>
+<% include ../partials/head %>
     <body id="form_layout">
       <div class="container">
         <div class="row text-center">
           <img class="img-rounded" src="/img/lock-icon-image.png" alt="AuthApp Login Image">
-          <h2 class="heading text-primary">Events Register | Register</h2>
+          <h2 class="heading text-primary">Events Register | Sign up</h2>
         </div>
         <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
 
-         <!--- <% if(error) { %>
-            <div class = "alert alert-danger alert-dismissable">
-              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-              <%= error %>
-            </div>
-          <% } %> -->
-
-          <form class="form-signin" method = 'post' action = '/register'>
-            <a class="btn btn-primary btn-block"><i></i>Register with Facebook</a>
-            <a class="btn btn-default btn-block"><i></i>Register with Github</a>
+          <div class="form-signin">
+           <!-- <a class="btn btn-primary btn-block"><i></i>Register with Facebook</a>
+            <a class="btn btn-default btn-block"><i></i>Register with Github</a> 
             <br>
             <div class="form-group">
             <label for="firstname" class="sr-only">Firstname</label>
@@ -25,7 +20,7 @@
             <div class="form-group">
             <label for="lastname" class="sr-only">lastname</label>
             <input type="text" id="lastname" name="lastname" class="form-control" placeholder="lastname" required autofocus>
-            </div>
+            </div> -->
             <div class="form-group">
             <label for="email" class="sr-only">Email address</label>
             <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
@@ -34,11 +29,57 @@
             <label for="password" class="sr-only">Password</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
             </div>
-            <button class="btn btn-primary btn-block">Sign Up</button>
+            <button onclick="handleSignUp()" class="btn btn-primary btn-block"  method = 'post' action = '/dashboard'>Sign Up</button>
             <br>
             <p>Have An Account? <a href="/">Please Login</a></p>
-          </form>
+          </div>
+          </div>
+          </div>
+          <div class="col-md-4"></div>
         </div>
       </div>
-      <% include ../partial/footer %>
+      <% include ../partials/footer %>
+      <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+      <script> 
+       var config = {
+    apiKey: "AIzaSyBGVFow_S-12dxMwSlIUt_9sV7hW1iMgD4",
+    authDomain: "bc-22-events-register.firebaseapp.com",
+    databaseURL: "https://bc-22-events-register.firebaseio.com",
+    projectId: "bc-22-events-register",
+    storageBucket: "bc-22-events-register.appspot.com",
+    messagingSenderId: "489636464688"
+  };
+  firebase.initializeApp(config);
+  </script>
+  <script>
+
+      function handleSignUp() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }
+      // Sign in with email and pass.
+      // [START createwithemail]
+      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        
+      });
+      
+    }
+    </script>
     </body>

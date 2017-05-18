@@ -2,20 +2,36 @@
 <% include ../partials/head %>
 <% include ../partials/navbar %>
 <body>
- <form class="form-signin" method = 'post' action = '/dashboard'>
-            
+<div class="container">
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+ <form class="form-signin" method = 'post' action = '/create'>
+            <div class="form-group">
             <label for="title" class="sr-only">Event</label>
-            <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Firstname" required autofocus>
+            <input type="text" id="title" name="firstname" class="form-control" placeholder="event" required autofocus>
+            </div>
+            <div class="form-group">
             <label for="date" class="sr-only">date</label>
-            <input type="date" id="lastname" name="lastname" class="form-control" placeholder="lastname" required autofocus>
+            <input type="date" id="date" name="date" class="form-control" placeholder="date" required autofocus>
+            </div>
+            <div class="form-group">
             <label for="time" class="sr-only">time</label>
-            <input type="datetime-local" id="time" name="time" class="form-control" placeholder="Email address" required autofocus>
+            <input type="time" id="time" name="time" class="form-control" placeholder="time" required autofocus>
+            </div>
+            <div class="form-group">
             <label for="venue" class="sr-only">venue</label>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-            
-            <button class="btn btn-primary btn-block">Create</button>
+            <input type="text" id="venue" name="venue" class="form-control" placeholder="venue" required>
+            </div>
+            </br>
+            </br>
+            <button id="eventcreator"class="btn btn-primary btn-block">Create</button>
             
           </form>
+          </div>
+          <div class="col-md-4"></div>
+          </div>
+          </div>
 <% include ../partials/footer %>
 </body>
 </html>

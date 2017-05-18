@@ -1,13 +1,11 @@
 const express = require('express'),
 bodyParser = require('body-parser'),
-router = express.Router(),
-dotenv = require('dotenv').config(),
 auth = require('./controllers/auth.js');
 
 //initialize express
 const app = express();
 
-var port = process.env.PORT || 8000;
+var port = 8000;
 
 //set up view engine
 app.set('views', __dirname + '/views');
@@ -16,13 +14,13 @@ app.set('view engine', 'ejs');
 
 //login page
 app.get('/', (req, res) => {
-  res.render('pages/index');
+  res.render('pages/register');
   
 });
 
 //register page
 app.get('/register', (req, res) => {
-	res.render('pages/register', {error: null});
+	res.render('pages/register');
 });
 
 //homepage
@@ -50,9 +48,10 @@ app.use(express.static('public'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/dashboard', (req,res,next) => {
-	next()
-}, require('./routes/events.js'));
+
+app.post('/register', auth.register);
+app.post('/', auth.login);
+
 
 app.listen(port, () => {
 	console.log("Now listening on  " + port);
