@@ -34,7 +34,8 @@ module.exports.register = (req, res) => {
 
 //signin with email and password
 module.exports.login = (req, res) => {
-    let full_name = req.body.full_name,
+     let firstname = req.body.firstname,
+        lastname= req.body.lastname,
         email = req.body.email,
         password = req.body.password;
 

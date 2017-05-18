@@ -1,0 +1,21 @@
+<html>
+<% include ../partials/head %>
+<% include ../partials/navbar %>
+<body>
+ <form class="form-signin" method = 'post' action = '/dashboard'>
+            
+            <label for="title" class="sr-only">Event</label>
+            <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Firstname" required autofocus>
+            <label for="date" class="sr-only">date</label>
+            <input type="date" id="lastname" name="lastname" class="form-control" placeholder="lastname" required autofocus>
+            <label for="time" class="sr-only">time</label>
+            <input type="datetime-local" id="time" name="time" class="form-control" placeholder="Email address" required autofocus>
+            <label for="venue" class="sr-only">venue</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            
+            <button class="btn btn-primary btn-block">Create</button>
+            
+          </form>
+<% include ../partials/footer %>
+</body>
+</html>
